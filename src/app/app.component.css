@@ -1,0 +1,13 @@
+.stato {
+    color: white;
+    font-size: 25px
+}
+
+.inser {
+    width: 30%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
