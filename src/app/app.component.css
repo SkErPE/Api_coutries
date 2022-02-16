@@ -1,13 +1,22 @@
-.stato {
-    color: white;
-    font-size: 25px
+.carta {
+    border: 2px solid rgb(184, 184, 184);
+    color: rgb(107, 107, 107);
+    padding: 10px;
+    border-radius: 13px;
+    max-width: 25rem
 }
 
-.inser {
-    width: 30%;
+.pulsante {
+    background: rgba(15, 145, 37, 0.548);
+    color: rgb(90, 88, 88)
 }
 
-.center {
-    display: flex;
-    justify-content: center;
+.pulsante:hover {
+    background-color: rgba(9, 88, 22, 0.548);
+  }
+
+td,
+th {
+    padding: 5px;
+    text-align: left;
 }
