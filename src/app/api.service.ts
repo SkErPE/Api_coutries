@@ -18,7 +18,7 @@ export class ApiService {
 constructor(private httpClient: HttpClient) {
    }
   
-  public getData(ID: string): Observable<any> {
-    return this.httpClient.get(this.baseUrl + '/' + ID, {'headers': headers});
+  public getData(ID: string, lan:string): Observable<any> {
+    return this.httpClient.get(this.baseUrl + '/' + ID +'?languageCode=' + lan, {'headers': headers});
   }
 }

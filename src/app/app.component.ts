@@ -12,7 +12,10 @@ export class AppComponent{
   success = false;
   noFound = false;
   vuoto = true;
-  
+  language:string = "it";
+  lan = true;
+
+
   risposta= {
     "data": {
       "capital": "string",
@@ -31,8 +34,12 @@ export class AppComponent{
   constructor(private apiService: ApiService) {
   }
 
+  languageChanger(value:string) {
+    this.language=value;
+  }
+
   public getData() {
-    this.apiService.getData(this.cId)
+    this.apiService.getData(this.cId, this.language)
     .subscribe(
       (response) => {
         console.log("response received")

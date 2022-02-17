@@ -1,9 +1,30 @@
 <app-header></app-header>
+
+<div class="position-absolute dropdown">
+  <button class=" dropbtn bg-light bg-gradient shadow">
+      Language
+  </button>
+    
+  <div class="dropdown-content bg-light bg-gradient">
+      <a (click)="languageChanger('it');">
+          <img src="http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Italy.svg" width="20" height="15"> 
+          Italiano</a>
+
+      <a (click)="languageChanger('en');">
+          <img src="http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20United%20Kingdom.svg" width="20" height="15">
+           English</a>
+  </div>
+</div>
+
 <div class="carta h-auto position-relative start-50 translate-middle-x card bg-light bg-gradient shadow-lg">
   <div class="card-body">
-    <label class="card-title fs-5 text">Dammi lo stato</label>
+
+    <label *ngIf="language=='it'" class="card-title fs-5 text">Dammi lo stato</label>
+    <label *ngIf="language=='en'" class="card-title fs-5 text">Insert the coutry</label>
+
     <input type = "text" name = "countryId" id = "countryId" class="border border-light form-control shadow" placeholder="IT, ET, FR, GE, ecc..." [(ngModel)]="cId">
-    <small id="emailHelp" class="form-text">Inserire un ISO-3166 coutry code.</small>
+    <small *ngIf="language=='it'" id="emailHelp" class="form-text">Inserire un ISO-3166 coutry code.</small>
+    <small *ngIf="language=='en'" id="emailHelp" class="form-text">Insert a ISO-3166 coutry code.</small>
 
     
     <div *ngIf="success">
@@ -46,29 +67,19 @@
 
     <br>
     <br>
-    <button type="submit" (click)="getData()" class="border border-light btn pulsante shadow">
+    <button *ngIf="language=='it'" type="submit" (click)="getData()" class="border border-light btn pulsante shadow">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
       </svg>
       Cerca
     </button>
+    <button *ngIf="language=='en'" type="submit" (click)="getData()" class="border border-light btn pulsante shadow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+      </svg>
+      Find
+    </button>
   </div>  
   
 
 </div>
-
-<!-- <table class="table">
-  <tbody>
-    <tr class="table-active">
-      ...
-    </tr>
-    <tr>
-      ...
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2" class="table-active">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table> -->

@@ -20,3 +20,48 @@ th {
     padding: 5px;
     text-align: left;
 }
+
+
+
+.dropbtn {
+    color: rgba(9, 88, 22, 0.548);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    min-width: 112px;
+}
+
+.dropdown {
+    display: inline-block;
+    right: 2%;
+    top: 30px;
+}
+
+.dropdown-content {
+    text-align: left;
+    display: none;
+    position: absolute;
+    min-width: 112px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: rgba(9, 88, 22, 0.548);
+    padding: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
